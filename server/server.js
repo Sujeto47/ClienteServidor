@@ -4,6 +4,10 @@ const server = net.createServer()
 server.on('connection', (socket)=>{
     socket.on('data',(data)=>{
         console.log('\nMensaje recibido desde el cliente: '+ data)
+        var caracteres = data.length;
+        //var palabras = data.split(' ');
+        console.log('\nEl mensaje tiene '+caracteres+' caracteres')
+        //console.log('\nEl mensaje tiene '+separarString(data)+' palabras')
         socket.write('Recibido')
     })
 
